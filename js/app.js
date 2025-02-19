@@ -22,6 +22,7 @@ let tie;
 const squareEls = document.querySelectorAll(".sqr");
 const messageEl = document.querySelector("#message");
 const gameBoard = document.querySelector(".board");
+const resetBtnEl = document.querySelector("#reset")
 /*-------------------------------- Functions --------------------------------*/
 
 const init = ()=>{
@@ -105,7 +106,10 @@ const switchPlayerTurn = () =>{
 
 }
 
+const resetGame = () =>{
+	init();
 
+}
 /*----------------------------- Event Listeners -----------------------------*/
 squareEls.forEach((sqr) =>{
 	sqr.addEventListener("click", handleClick);
@@ -117,6 +121,6 @@ gameBoard.addEventListener("click", (event)=>{
 		handleClick(event);
 	}
 })
-
+resetBtnEl.addEventListener("click", resetGame);
 
 init();
