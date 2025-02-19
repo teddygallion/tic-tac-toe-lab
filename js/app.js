@@ -29,6 +29,7 @@ const init = ()=>{
 	console.log("initialized;")
 	board = ['','','','','','','','',''];
 	turn = "X";
+	tie = false;
 	winner = false;
 	render();
 }
@@ -44,7 +45,7 @@ const updateBoard = () =>{
 }
 const updateMessage = () =>{
 	if(winner === false && tie === false){
-		messageEl.textContent = `$ it's the {turn}'s turn`;
+		messageEl.textContent = `it's ${turn}'s turn`;
 	}else if(winner === false && tie === true){
 		messageEl.textContent = 'We have a tie!';
 	}else{
